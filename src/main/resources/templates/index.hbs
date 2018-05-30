@@ -1,0 +1,15 @@
+
+{{#partial "content"}}
+
+    <h1>Destination list!</h1>
+
+    {{#if destinations}}
+        {{#each destinations }}
+            <p>{{ cityArea }}, {{ country }}  <a href="destinations/{{id}}">read more...</a></p>
+        {{/each}}
+    {{else}}
+        <p>No Destinations!</p>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}

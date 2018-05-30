@@ -40,6 +40,22 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/destinations/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfDestinationToFind = Integer.parseInt(req.params("id"));
+            Destination foundDestination = Destination.findById(idOfDestinationToFind);
+            model.put("destination", foundDestination);
+            return new ModelAndView(model, "destination-detail.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/destinations/:id/update", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfDestinationToEdit = Integer.parseInt(req.params("id"));
+            Destination editDestination = Destination.findById(idOfDestinationToEdit);
+            model.put("editDestination", editDestination);
+            return new ModelAndView(model, "newdestination-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
 
 }

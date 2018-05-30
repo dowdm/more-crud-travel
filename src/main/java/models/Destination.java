@@ -9,6 +9,7 @@ public class Destination {
     private String picture;
     private String highlights;
     private static ArrayList<Destination> instances = new ArrayList<>();
+    private int id;
 
 
     public Destination(String country, String cityArea, String date, String reason, String picture, String highlights ){
@@ -19,6 +20,7 @@ public class Destination {
         this. picture = picture;
         this.highlights = highlights;
         instances.add(this);
+        this.id = instances.size();
     }
 
     public String getCountry() {
@@ -45,10 +47,44 @@ public class Destination {
         return highlights;
     }
 
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setCityArea(String cityArea) {
+        this.cityArea = cityArea;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
+    public void setHighlights(String highlights) {
+        this.highlights = highlights;
+    }
+
     public static ArrayList<Destination> getAll() {
         return instances;
     }
     public static void clearAll(){
         instances.clear();
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public static Destination findById(int id){
+        return instances.get(id-1);
+    }
+
+
 }

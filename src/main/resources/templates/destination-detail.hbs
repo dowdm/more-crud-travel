@@ -1,0 +1,23 @@
+{{#partial "content"}}
+
+
+
+    <img src="{{ destination.picture }}" width="300px">
+    <p>Country:</p>
+    <p>{{ destination.country }}</p>
+    <h5>City/Area:</h5>
+    <p> {{ destination.cityArea }}</p>
+    <h5>Date:</h5>
+    <p> {{ destination.date }}</p>
+    <h5>Reason:</h5>
+    <p> {{ destination.reason }}</p>
+    <h5>Highlights:</h5>
+    <p> {{ destination.highlights }}</p>
+    <h5>Post status:</h5>
+    <p>
+        <a href="/destination/{{destination.id}}/update">Edit this post</a>
+        <a href="/destination/{{destination.id}}/delete">DELETE this post (no undo)</a>
+    </p>
+{{/partial}}
+
+{{> layout.hbs}}
