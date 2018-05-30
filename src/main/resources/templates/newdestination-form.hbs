@@ -4,22 +4,22 @@
         <h1>Edit this Destination!</h1>
         <form action="/destinations/{{editDestination.id}}/update" method="post">
             <label for="country">Destination Country</label>
-            <input id="country" name="country" type="text" value="editDestination.country">
+            <input id="country" name="country" type="text" value="{{editDestination.country}}">
 
             <label for="cityArea">Destination City/Area</label>
-            <input id="cityArea" name="cityArea" type="text" value="editDestination.cityArea">
+            <input id="cityArea" name="cityArea" type="text" value="{{editDestination.cityArea}}">
 
             <label for="date">Destination Date</label>
-            <input id="date" name="date" type="text" value="editDestination.date">
+            <input id="date" name="date" type="text" value="{{editDestination.date}}">
 
             <label for="reason">Destination Reason</label>
-            <input id="reason" name="reason" type="text" value="editDestination.reason">
+            <input id="reason" name="reason" type="text" value="{{editDestination.reason}}">
 
             <label for="highlights">Destination highlights</label>
-            <input id="highlights" name="highlights" type="text" value="editDestination.highlights">
+            <input id="highlights" name="highlights" type="text" value="{{editDestination.highlights}}">
 
             <label for="picture">Destination Picture (URL)</label>
-            <input id="picture" name="picture" type="text" value="editDestination.picture">
+            <input id="picture" name="picture" type="text" value="{{editDestination.picture}}">
             <button type="submit" class="btn btn-default">Go!</button>
         </form>
     {{else}}

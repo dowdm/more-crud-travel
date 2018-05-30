@@ -133,4 +133,21 @@ public class DestinationTest {
         assertEquals(2, otherDestination.findById(otherDestination.getId()).getId());
     }
 
+    @Test
+    public void deleteDestination_deletesDestination_0() throws Exception {
+        Destination destination = setUpDestination();
+        Destination otherDestination = new Destination("a", "b", "c", "d", "e", "f");
+        destination.deleteDestination();
+        assertEquals(1, Destination.getAll().size());
+        assertEquals(2, Destination.getAll().get(0).getId());
+    }
+
+    @Test
+    public void deleteAllPostsDeletesAllPosts() throws Exception {
+        Destination destination = setUpDestination();
+        Destination otherDestination = new Destination("a", "b", "c", "d", "e", "f");
+
+        Destination.clearAllDestinations();
+        assertEquals(0, Destination.getAll().size());
+    }
 }

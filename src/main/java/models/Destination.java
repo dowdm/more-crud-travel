@@ -86,5 +86,13 @@ public class Destination {
         return instances.get(id-1);
     }
 
+    public void deleteDestination() {
+        instances.remove(id-1);
+    }
+
+    public static void clearAllDestinations(){
+        instances.clear();
+    }
+
 
 }
